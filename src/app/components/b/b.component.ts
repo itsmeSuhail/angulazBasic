@@ -5,7 +5,7 @@ import { CounterService } from '../../services/counter.service';
   selector: 'app-b',
   standalone: true,
   imports: [],
-  providers:[CounterService],
+  // providers:[CounterService],
   templateUrl: './b.component.html',
   styleUrl: './b.component.css'
 })

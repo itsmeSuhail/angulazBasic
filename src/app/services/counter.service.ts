@@ -1,18 +1,21 @@
-import { Injectable } from '@angular/core';
+import { Injectable, computed, signal ,Signal} from '@angular/core';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CounterService {
-private counter=0;
+private counter=signal(0);
+doubleCount:Signal<number>=computed(()=>this.counter()*2);
 getCounter(){
-return this.counter;
+return this.counter();
 }
 increment(){
-  this.counter=this.counter+=1;
+  // this.counter.set(this.counter()+1);
+  this.counter.update(prev=>prev+1);
 }
 decrement(){
-  this.counter-=1;
+  this.counter.set(this.counter()-1);
+
 };
 
 }

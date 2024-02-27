@@ -9,7 +9,7 @@ import { CounterService } from '../../services/counter.service';
   styleUrl: './a.component.css'
 })
 export class AComponent {
-  constructor(private CounterService: CounterService) { }
+  constructor(public CounterService: CounterService) { }
   value = this.CounterService.getCounter();
   increment() {
     this.value = this.CounterService.getCounter();
