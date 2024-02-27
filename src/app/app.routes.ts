@@ -1,11 +1,9 @@
 import { Routes } from '@angular/router';
-import { LoginComponent } from './components/login/login.component';
-import { SignupComponent } from './components/signup/signup.component';
 import { NotfoundComponent } from './components/notfound/notfound.component';
 
 export const routes: Routes = [
-    {path:"login",component:LoginComponent},
-    {path:"signup",component:SignupComponent},
+    {path:"login",loadComponent:()=>import("./components/login/login.component").then(com=>com.LoginComponent)},
+    {path:"signup",loadComponent:()=>import("./components/signup/signup.component").then(com=>com.SignupComponent)},
     {path:"",redirectTo:"/login",pathMatch:"full"},
     {path:"**",component:NotfoundComponent}
 ];
