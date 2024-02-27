@@ -1,0 +1,23 @@
+<p>signup works!</p>
+<form #registerForm="ngForm" >
+    <input type="password"
+    required 
+    #password="ngModel"
+    minlength="6"
+    name="password"
+    ngModel
+    ><br>
+    <span [hidden]="password.valid || password.untouched">password should contain at least 8 char</span>
+    <br>
+    <input type="email" 
+    pattern="^[a-z0-9]+@[a-z]+\.[a-z]{2,3}$"
+    #email="ngModel"
+    name="email"
+    required
+    ngModel
+    ><br>
+    <span [hidden]="email.valid || email.untouched">email is not valid</span>
+    <br>
+
+    <button (click)="submit(registerForm)">submit</button>
+</form>

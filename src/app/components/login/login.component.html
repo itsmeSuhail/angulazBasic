@@ -1,0 +1,11 @@
+<p>login works!</p>
+<form [formGroup]="loginForm" >
+    <input type="password" [formControl]="password" ><br>
+    <span [hidden]="password.valid || password.untouched">password should contain at least 8 char</span>
+    <br>
+    <input type="email" [formControl]="email"><br>
+    <span [hidden]="email.valid || email.untouched">email is not valid</span>
+    <br>
+
+    <button (click)="submit()">submit</button>
+</form>

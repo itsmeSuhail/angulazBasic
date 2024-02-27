@@ -1,31 +1,4 @@
-<h1>hello ji</h1>
-<!-- 
+<app-navbar></app-navbar>
+<h1>parent routing</h1>
 
-Basic concepts 
-<app-user-profile></app-user-profile> 
-
-how to pass data from parent to child    
-<app-props
-    *ngFor="let user of userData" 
-    [username]="user.name" 
-    [age]="user.age" 
-    [salary]="user.salary" 
-    [isAdmin]="user.isAdmin"
-    >
-</app-props>
-
-How to pass children props to parent
-<app-child-props
-(myEvents)="receivedProp($event)"
-></app-child-props>
-how to create pipes
-<app-pipes></app-pipes>
-custom directives
-<app-custom-directives></app-custom-directives>
-
-life cycle methods
-<app-life-cycles
-username="daku mangal singh"
-></app-life-cycles>
--->
-<app-jokes></app-jokes>
+<router-outlet></router-outlet>
